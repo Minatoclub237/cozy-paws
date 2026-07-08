@@ -1,8 +1,8 @@
 import FadeUp from "./FadeUp";
 
 const FIELD =
-  "w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder-white/50 outline-none transition-colors focus:border-white/50 focus:bg-white/15";
-const LABEL = "mb-1.5 block text-sm font-medium text-white/85";
+  "w-full rounded-xl border border-white/25 bg-black/25 px-4 py-3 text-sm text-white placeholder-white/60 outline-none transition-colors focus:border-white/50 focus:bg-black/40";
+const LABEL = "mb-1.5 block text-sm font-medium text-white";
 
 export default function ContactSection() {
   return (
@@ -13,13 +13,13 @@ export default function ContactSection() {
         alt="Vétérinaire entouré d'animaux"
         className="absolute inset-0 h-full w-full object-cover object-center"
       />
-      {/* Overlay for depth & readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/40 to-black/60" />
+      {/* Light overlay — keep the photo visible */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/20 to-black/40" />
 
       {/* Centering wrapper */}
       <div className="relative z-10 flex min-h-screen items-center justify-center px-4 py-12 sm:py-16">
-        {/* Frosted contact card */}
-        <div className="relative w-full max-w-xl overflow-hidden rounded-2xl border border-white/15 bg-[#0e1a0e]/70 p-6 shadow-2xl backdrop-blur-xl sm:p-9 md:p-11">
+        {/* Transparent glass card — the background photo shows through */}
+        <div className="relative w-full max-w-xl overflow-hidden rounded-2xl border border-white/25 bg-black/20 p-6 shadow-2xl backdrop-blur-[2px] [text-shadow:0_1px_12px_rgba(0,0,0,0.7)] sm:p-9 md:p-11">
           {/* Logo (CozyPaws — light variant for the dark card) */}
           <FadeUp delay={0}>
             <div className="mb-5 flex justify-center">
