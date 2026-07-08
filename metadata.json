@@ -1,0 +1,6 @@
+{
+  "name": "CozyPaws",
+  "description": "A visually stunning and responsive CozyPaws pet store hero section built with React, Tailwind CSS, and custom animations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
