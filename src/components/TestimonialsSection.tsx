@@ -234,7 +234,7 @@ export default function TestimonialsSection() {
   const rowB = REVIEWS.slice(half);
 
   return (
-    <section className="relative z-[1] bg-[#EFFDF0] py-20 sm:py-24 md:py-28 overflow-hidden">
+    <section id="temoignages" className="relative z-[1] bg-[#EFFDF0] py-20 sm:py-24 md:py-28 overflow-hidden">
       {/* Header */}
       <div className="max-w-3xl mx-auto px-4 text-center mb-12 sm:mb-16">
         <span className="inline-block font-bold uppercase tracking-[0.2em] text-[11px] sm:text-[13px] text-[#E86A10] mb-4">

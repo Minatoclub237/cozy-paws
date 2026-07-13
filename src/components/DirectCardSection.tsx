@@ -143,7 +143,7 @@ export default function DirectCardSection() {
   }, [isNight]);
 
   return (
-    <section className="direct-section">
+    <section id="prestations" className="direct-section">
       {/* Theme switch — drives body.is-night */}
       <button
         type="button"

@@ -175,7 +175,7 @@ export default function App() {
       {/* =======================================================
           SECTION 1 — Hero (sticky; Section 2 scrolls up over it)
          ======================================================= */}
-      <div className="sticky top-0 z-0 h-screen w-full flex flex-col overflow-hidden">
+      <div id="accueil" className="sticky top-0 z-0 h-screen w-full flex flex-col overflow-hidden">
       {/* Navigation Header */}
       <Header
         cartCount={cartItems.reduce((acc, item) => acc + item.quantity, 0)}

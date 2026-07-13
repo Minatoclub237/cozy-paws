@@ -20,11 +20,17 @@ export default function Header({
   const [activeTab, setActiveTab] = useState("ACCUEIL");
 
   const navLinks = [
-    { label: "ACCUEIL", href: "#" },
-    { label: "SERVICES / PRESTATIONS", href: "#" },
-    { label: "A PROPOS", href: "#" },
-    { label: "TEMOIGNAGES", href: "#" }
+    { label: "ACCUEIL", target: "accueil" },
+    { label: "SERVICES / PRESTATIONS", target: "prestations" },
+    { label: "A PROPOS", target: "apropos" },
+    { label: "TEMOIGNAGES", target: "temoignages" }
   ];
+
+  const scrollToSection = (id: string) => {
+    document
+      .getElementById(id)
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
     <header className="relative w-full z-30 shrink-0 bg-transparent animate-fade-in delay-100">
@@ -45,7 +51,10 @@ export default function Header({
           {navLinks.map((link) => (
             <button
               key={link.label}
-              onClick={() => setActiveTab(link.label)}
+              onClick={() => {
+                setActiveTab(link.label);
+                scrollToSection(link.target);
+              }}
               className={`text-xs lg:text-sm font-semibold transition-all hover:text-[#1a3d1a] ${
                 activeTab === link.label
                   ? "text-[#1a3d1a] relative after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-[2px] after:bg-[#E86A10] after:rounded-full"
@@ -61,7 +70,7 @@ export default function Header({
         <div className="flex items-center gap-2.5">
           {/* CTA "PRENDRE RDV" button (hidden on extra small screen maybe, but let's keep it visible on most, or hidden below sm) */}
           <button
-            onClick={() => alert("Prise de rendez-vous bientôt disponible !")}
+            onClick={() => scrollToSection("contact")}
             className="hidden sm:inline-flex bg-[#E86A10] hover:bg-[#d45e0d] text-white px-5 py-2.5 rounded-full text-xs lg:text-sm font-bold shadow-md transition-all scale-100 hover:scale-105 active:scale-95 cursor-pointer items-center justify-center whitespace-nowrap"
           >
             PRENDRE RDV
@@ -87,6 +96,7 @@ export default function Header({
                 onClick={() => {
                   setActiveTab(link.label);
                   setMobileMenuOpen(false);
+                  scrollToSection(link.target);
                 }}
                 className={`text-sm font-semibold py-2 px-3 rounded-lg text-left transition-all ${
                   activeTab === link.label
@@ -101,7 +111,7 @@ export default function Header({
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
-                alert("Prise de rendez-vous bientôt disponible !");
+                scrollToSection("contact");
               }}
               className="w-full bg-[#E86A10] hover:bg-[#d45e0d] text-white py-3 px-4 rounded-xl text-xs font-bold text-center shadow-md transition-all"
             >

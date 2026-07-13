@@ -3,7 +3,7 @@ const PARAGRAPH =
 
 export default function OrbisSection() {
   return (
-    <section className="relative overflow-hidden min-h-screen">
+    <section id="apropos" className="relative overflow-hidden min-h-screen">
       {/* Fullscreen background video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
